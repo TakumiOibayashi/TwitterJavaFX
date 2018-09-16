@@ -29,6 +29,8 @@ public class RootController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
  
     }
+    
+    //別ウインドウに移動
     @FXML
     private void btnOK_onClick(MouseEvent aEvent) throws IOException {
         System.out.println("btnOK_onClick");
@@ -39,6 +41,8 @@ public class RootController implements Initializable{
 		default: break;
 		}
     }
+    
+    //メニューバーの「閉じる」を押してウインドウを閉じる
     @FXML
     private void mnuClose_onClick(ActionEvent event) {
         System.out.println("mnuClose_onClick");

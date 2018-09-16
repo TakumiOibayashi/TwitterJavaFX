@@ -18,6 +18,7 @@ public class Main extends Application {
 		launch(args);
 	}
 	
+	//メインウインドウを表示
     public void showRoot(Stage primaryStage) throws IOException{
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Root.fxml"));
 		Scene scene = new Scene(root,600,400);
@@ -26,6 +27,7 @@ public class Main extends Application {
 		primaryStage.show();
 	}
     
+    //アカウントブロックウインドウを表示
     public void showBlock(Stage primaryStage) throws IOException{
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Block.fxml"));
 		Scene scene = new Scene(root,600,400);

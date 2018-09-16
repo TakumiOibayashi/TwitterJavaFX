@@ -24,16 +24,12 @@ public class BlockController implements Initializable{
     private Label     lblAnswer;
     Stage stage;
     
-    //Stage thisStage;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
  
     }
-    /*
-    public void setThisStage(Stage stage) {
-        thisStage = stage;
-    }*/
     
+    //「ブロック」ボタンを押してblock.pyを実行する
     @FXML
     private void btnOK_onClick(MouseEvent aEvent) {
         System.out.println("btnOK_onClick");
@@ -60,6 +56,7 @@ public class BlockController implements Initializable{
         lblAnswer.setText(txtName.getText() + "を含むツイートをしたアカウントをブロックしました．");
     }
     
+    //「キャンセル」ボタンを押してメインウインドウに戻る
     @FXML
     private void btnCancel_onClick(ActionEvent event) throws IOException {
         System.out.println("btnCancel_onClick");
@@ -68,6 +65,7 @@ public class BlockController implements Initializable{
         mainWindow.showRoot(stage);
     }
     
+    //メニューバーの「閉じる」を押してウインドウを閉じる
     @FXML
     private void mnuClose_onClick(ActionEvent event) {
         System.out.println("mnuClose_onClick");
