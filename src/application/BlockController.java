@@ -10,6 +10,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -21,6 +22,7 @@ public class BlockController implements Initializable{
     private TextField txtName;
     @FXML
     private Label     lblAnswer;
+    Stage stage;
     
     //Stage thisStage;
     @Override
@@ -57,12 +59,14 @@ public class BlockController implements Initializable{
 
         lblAnswer.setText(txtName.getText() + "を含むツイートをしたアカウントをブロックしました．");
     }
-    /*
+    
     @FXML
-    private void mnuBack_onClick(ActionEvent event) {
-        System.out.println("mnuBack_onClick");
-        thisStage.show();
-    }*/
+    private void btnCancel_onClick(ActionEvent event) throws IOException {
+        System.out.println("btnCancel_onClick");
+        Main mainWindow = new Main();
+        stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
+        mainWindow.showRoot(stage);
+    }
     
     @FXML
     private void mnuClose_onClick(ActionEvent event) {

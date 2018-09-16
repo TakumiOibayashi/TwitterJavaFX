@@ -1,34 +1,37 @@
 package application;
-	
-import javax.sound.midi.ControllerEventListener;
+
+import java.io.IOException;
 
 import javafx.application.Application;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.fxml.FXMLLoader;
-
+import javafx.stage.Stage;
 
 public class Main extends Application {
-	Stage stage;
 	@Override
-	public void start(Stage primaryStage) {
-		stage = primaryStage;
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Root.fxml"));
-			BorderPane root = (BorderPane)loader.load();
-			Scene scene = new Scene(root,600,400);
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
-			//BlockController controller = (BlockController)loader.getController();
-			//controller.setThisStage(stage);
-			} catch(Exception e) {
-			e.printStackTrace();
-		}
+	public void start(Stage primaryStage) throws IOException{
+		showRoot(primaryStage);
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
+    public void showRoot(Stage primaryStage) throws IOException{
+		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Root.fxml"));
+		Scene scene = new Scene(root,600,400);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("TwitterJavaFX");
+		primaryStage.show();
+	}
+    
+    public void showBlock(Stage primaryStage) throws IOException{
+		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Block.fxml"));
+		Scene scene = new Scene(root,600,400);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("TwitterJavaFX");
+		primaryStage.show();
+	}
+
 }
