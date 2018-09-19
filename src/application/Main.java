@@ -27,6 +27,15 @@ public class Main extends Application {
 		primaryStage.show();
 	}
     
+  //ツイートウインドウを表示
+    public void showTweet(Stage primaryStage) throws IOException{
+		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Tweet.fxml"));
+		Scene scene = new Scene(root,600,400);
+		primaryStage.setScene(scene);
+		primaryStage.setTitle("TwitterJavaFX");
+		primaryStage.show();
+	}
+    
     //アカウントブロックウインドウを表示
     public void showBlock(Stage primaryStage) throws IOException{
 		BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Block.fxml"));

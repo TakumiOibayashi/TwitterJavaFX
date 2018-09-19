@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
  
-public class BlockController implements Initializable{
+public class TweetController implements Initializable{
  
     @FXML
     private TextField txtName;
@@ -29,13 +29,13 @@ public class BlockController implements Initializable{
  
     }
     
-    //「ブロック」ボタンを押してblock.pyを実行する
+    //「ツイート」ボタンを押してtweet.pyを実行する
     @FXML
     private void btnOK_onClick(MouseEvent aEvent) {
         System.out.println("btnOK_onClick");
         
         try {
-            ProcessBuilder builder = new ProcessBuilder("python", "/home/oiba/Python/Twitter/block.py",txtName.getText());
+            ProcessBuilder builder = new ProcessBuilder("python", "/home/oiba/Python/Twitter/tweet.py",txtName.getText());
             Process process = builder.start();
  
             InputStream s = process.getInputStream();
@@ -53,7 +53,7 @@ public class BlockController implements Initializable{
             ex.printStackTrace();
         }
 
-        lblAnswer.setText(txtName.getText() + "を含むツイートをしたアカウントをブロックしました．");
+        lblAnswer.setText(txtName.getText() + "とツイートしました．");
     }
     
     //「キャンセル」ボタンを押してメインウインドウに戻る

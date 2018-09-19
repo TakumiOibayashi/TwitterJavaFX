@@ -24,10 +24,12 @@ public class RootController implements Initializable{
     public ToggleGroup toggle1;
     int radio;
     Stage stage;
+    static int count = 1;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
- 
+    	System.out.println(count + "回目");
+    	count++;
     }
     
     //別ウインドウに移動
@@ -36,7 +38,7 @@ public class RootController implements Initializable{
         System.out.println("btnOK_onClick");
         Main mainWindow = new Main();
         switch (radio) {
-		case 1: System.out.println("ツイート"); break;
+		case 1: System.out.println("ツイート"); mainWindow.showTweet(stage); break;
 		case 2: System.out.println("ブロック"); mainWindow.showBlock(stage); break;
 		default: break;
 		}
@@ -51,6 +53,7 @@ public class RootController implements Initializable{
     
     @FXML
     private void handleRadio1(ActionEvent event) {
+    	stage = (Stage) ((Node) event.getTarget()).getScene().getWindow();
         System.out.println("handleRadio1");
         radio = 1;
     }
