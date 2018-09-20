@@ -43,7 +43,7 @@
                         <TextField fx:id="txtName" GridPane.columnIndex="1" />
                         <Label text="ツイートするワードを入力" />
                         <Label fx:id="lblAnswer" text="　" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" onAction="#btnOK_onClick" text="ツイート" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onMouseClicked="#btnOK_onClick" text="ツイート" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                         <Button mnemonicParsing="false" onAction="#btnCancel_onClick" text="キャンセル" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>

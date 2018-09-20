@@ -26,7 +26,6 @@ public class TweetController implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
- 
     }
     
     //「ツイート」ボタンを押してtweet.pyを実行する

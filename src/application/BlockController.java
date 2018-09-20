@@ -26,16 +26,17 @@ public class BlockController implements Initializable{
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
- 
     }
     
     //「ブロック」ボタンを押してblock.pyを実行する
     @FXML
-    private void btnOK_onClick(MouseEvent aEvent) {
-        System.out.println("btnOK_onClick");
+    private void btnBlock_onClick(MouseEvent aEvent) {
+        System.out.println("btnBlock_onClick");
         
         try {
+        	System.out.println("python実行前");
             ProcessBuilder builder = new ProcessBuilder("python", "/home/oiba/Python/Twitter/block.py",txtName.getText());
+            System.out.println("python実行後");
             Process process = builder.start();
  
             InputStream s = process.getInputStream();
